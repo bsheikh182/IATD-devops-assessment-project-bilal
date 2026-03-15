@@ -117,6 +117,3 @@ test("generateFlightId: whitespace-only string returns undefined", () => {
 test("generateFlightId: fewer than two non-whitespace characters returns undefined", () => {
     expect(generateFlightId("A")).toBe(undefined);
 });
-htId: whitespace string", () => {
-    expect(generateFlightId("   \n")).toBe(undefined);
-  });
