@@ -1,5 +1,5 @@
 FROM node:20.12-alpine
-#copy files
+#copy files jut
 COPY package.json package-lock.json ./
 
 RUN npm install
