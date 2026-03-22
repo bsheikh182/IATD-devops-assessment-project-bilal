@@ -36,4 +36,7 @@ jobs:
       run: docker build -f Dockerfiles/test.Dockerfile -t bsheikh/sheikh-bilal-intro-to-devops-a2:test-latest .
     - name: Push test Docker image
       run: docker push bsheikh/sheikh-bilal-intro-to-devops-a2:test-latest
-    
+    - name: Build user Docker image
+      run: docker build -f Dockerfiles/user.Dockerfile -t bsheikh/sheikh-bilal-intro-to-devops-a2:user-latest .
+    - name: Push user Docker image
+      run: docker push bsheikh/sheikh-bilal-intro-to-devops-a2:user-latest
