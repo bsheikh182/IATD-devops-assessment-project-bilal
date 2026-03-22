@@ -27,3 +27,5 @@ jobs:
         only-pr-files: false
     - name: Run Jest Tests
       run: npm test
+    - name: Build test Docker image
+      run: docker build -f Dockerfiles/test.Dockerfile -t bsheikh/sheikh-bilal-intro-to-devops-a2:test-latest .
