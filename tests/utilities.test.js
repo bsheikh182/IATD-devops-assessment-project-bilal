@@ -92,17 +92,23 @@ test("isValidDateString: invalid string", () => {
 
   ///// PUT YOUR TESTS FOR generateFlightId HERE /////
 
-// Requirement 1: First two characters should match first two letters of airline name
-test("generateFlightId: first two characters match airline name", () => {
-    const id = generateFlightId("Qantas");
-    expect(id.substring(0, 2)).toBe("QA");
+// Requirement 1: First two characters should be the first two letters of airline name
+test("generateFlightId: first two characters come from airline name", () => {
+    const airline = "Qantas";
+    const id = generateFlightId(airline);
+
+    expect(id.substring(0, 2)).toBe(airline.substring(0, 2).toUpperCase());
 });
 
 // Requirement 2: First two characters should be uppercase
 test("generateFlightId: first two characters are uppercase", () => {
-    const id = generateFlightId("emirates");
+    const airline = "emirates";
+    const id = generateFlightId(airline);
+
     const prefix = id.substring(0, 2);
+
     expect(prefix).toBe(prefix.toUpperCase());
+    expect(prefix).toBe(airline.substring(0, 2).toUpperCase());
 });
 
 // Requirement 3: Empty or <2 non-whitespace characters returns undefined
